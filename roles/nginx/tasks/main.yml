@@ -2,7 +2,11 @@
 # Later on we might also install a default config file, but this should be reusable between hosts
 ---
 - name: nginx installed
-  apt: name=nginx state=installed
-# TODO install path
+  apt: name=nginx update_cache=yes cache_valid_time=3600 state=latest
+
+- name: nginx conf installed
+  template: src=nginx.conf dest=/etc/nginx/nginx.conf
+  notify: restart nginx
+
 - name: nginx started
   service: name=nginx state=started
