@@ -1,0 +1,8 @@
+# For now this just checks that nginx is installed and running
+# Later on we might also install a default config file, but this should be reusable between hosts
+---
+- name: nginx installed
+  apt: name=nginx state=installed
+# TODO install path
+- name: nginx started
+  service: name=nginx state=started
