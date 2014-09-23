@@ -1,0 +1,7 @@
+---
+- name: install revel
+  command: >
+    go get github.com/revel/cmd/revel
+    creates={{ gopath }}/bin/revel
+  environment: 
+    GOPATH: "{{ gopath }}"

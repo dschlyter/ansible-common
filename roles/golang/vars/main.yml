@@ -1,0 +1,5 @@
+---
+# this defaults to user home directory - "run ansible all -m setup -vvvv -s" to show facts
+# gopath: {{ ansible_env.PWD }}/code/go"
+
+gopath: "/opt/gocode"

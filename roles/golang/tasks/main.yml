@@ -1,0 +1,11 @@
+---
+- name: install golang
+  apt: name=golang state=latest
+
+- name: create gopath directory
+  file: path={{ gopath }} state=directory
+
+# None seems to read /etc/profile.d
+#- name: set gopath env varaible
+#  template: src=go-path.sh dest=/etc/profile.d/
+#  sudo: yes
