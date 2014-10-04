@@ -1,7 +1,7 @@
 # For now this just checks that nginx is installed and running
 # Later on we might also install a default config file, but this should be reusable between hosts
 ---
-- name: nginx installed
+- name: nginx installed (latest version)
   apt: name=nginx update_cache=yes cache_valid_time=3600 state=latest
 
 - name: nginx conf installed
